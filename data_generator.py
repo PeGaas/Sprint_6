@@ -39,3 +39,7 @@ def generate_rental_period():
 def generate_comment():
     return Faker('ru-RU').text(max_nb_chars=100)
 
+
+def random_color_choice():
+    color = random.choices(["black", "grey"], k=1)
+    return str(*color)

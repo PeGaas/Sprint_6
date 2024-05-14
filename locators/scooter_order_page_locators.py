@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
-
-from data_generator import generate_metro_station, generate_date, generate_rental_period
+from data_generator import generate_metro_station, generate_date, generate_rental_period, random_color_choice
 
 # Кнопка заказать вверху страницы
 BUTTON_ORDER_TOP = [By.XPATH, "//button[@class='Button_Button__ra12g']"]
@@ -20,7 +19,7 @@ ADDRESS_FIELD = [By.CSS_SELECTOR, "[placeholder='* Адрес: куда прив
 # Поле выбора Станция метро
 METRO_FIELD = [By.CSS_SELECTOR, "[placeholder='* Станция метро']"]
 
-# Список выбора Страции метро
+# Список выбора Станции метро
 LIST_SUBWAY_STATIONS = [By.XPATH, f'//li[@data-value="{generate_metro_station()}"]']
 
 # Поле ввода Телефон: на него позвонит курьер
@@ -47,11 +46,8 @@ LEASE_TERM = [By.CSS_SELECTOR, ".Dropdown-placeholder"]
 # Поле выбора срока аренды из выпадающего списка
 RENTAL_PERIOD = [By.XPATH, f"//div[@class='Dropdown-menu']/div[{generate_rental_period()}]"]
 
-# Цвет Чёрный жемчуг
-BLACK_PEARL = [By.CSS_SELECTOR, "[for='black']"]
-
-# Цвет Серая безысходность
-GRAY_DESPAIR = [By.CSS_SELECTOR, "[for='grey']"]
+# Цвет самоката
+COLLOR_SCOOTER = [By.CSS_SELECTOR, f"[for='{random_color_choice()}']"]
 
 # Поле ввода Комментарий для курьера
 COMMENT_FOR_COURIER = [By.CSS_SELECTOR, "[placeholder='Комментарий для курьера']"]
